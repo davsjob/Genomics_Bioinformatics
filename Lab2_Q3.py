@@ -5,7 +5,7 @@ import sys
 def reversecompliment(inputfile, outputfile):
 
     with open(inputfile, 'r') as input_f, open(outputfile, 'w') as output_f:
-        compliments = { "A":"T", "G":"C", "T":"A", "C":"G"} #Dict with complementary values
+        compliments = { "A":"T", "G":"C", "T":"A", "C":"G", "N":"N"} #Dict with complementary values
         seq = ""
         rev = ""
         for line in input_f: #Writes header
@@ -17,7 +17,7 @@ def reversecompliment(inputfile, outputfile):
                 output_f.write(line) #Writes header first
             else:
                 seq += line.strip() #Takes away linebreaks
-                for i in seq:
+                for i.upper() in seq:
                     if i in compliments:
                         rev += compliments[i] #adds complementary base
 
