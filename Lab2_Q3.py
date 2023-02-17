@@ -17,8 +17,8 @@ def reversecompliment(inputfile, outputfile):
                 output_f.write(line) #Writes header first
             else:
                 seq += line.strip() #Takes away linebreaks
-                for i.upper() in seq:
-                    if i in compliments:
+                for i in seq:
+                    if i.upper() in compliments:
                         rev += compliments[i] #adds complementary base
 
 #Inputs and outputs from commandline
