@@ -19,7 +19,7 @@ def reversecompliment(inputfile, outputfile):
                 seq += line.strip() #Takes away linebreaks
                 for i in seq:
                     if i.upper() in compliments:
-                        rev += compliments[i] #adds complementary base
+                        rev += compliments[i.upper()] #adds complementary base
 
 #Inputs and outputs from commandline
 input = sys.argv[1]
