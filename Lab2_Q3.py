@@ -10,17 +10,17 @@ def reversecompliment(inputfile, outputfile):
         rev = ""
         for line in input_f: #Writes header
             if line.startswith(">"): #Checks if header
-                if rev: #writes complementary code and resets
-                    output_f.write(rev[::-1] + "\n") 
-                    seq = ""
-                    rev = ""
                 output_f.write(line) #Writes header first
             else:
                 seq += line.strip() #Takes away linebreaks
                 for i in seq:
                     if i.upper() in compliments:
                         rev += compliments[i.upper()] #adds complementary base
-
+                if rev: #writes complementary code and resets
+                    output_f.write(rev[::-1] + "\n") 
+                    seq = ""
+                    rev = ""
+                    
 #Inputs and outputs from commandline
 input = sys.argv[1]
 output = sys.argv[2]
